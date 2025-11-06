@@ -1,0 +1,57 @@
+{
+  "required" : [ "MailingCountry", "MailingPostalCode", "MailingState", "MailingStreet", "Mailingcity", "RegisteredEmailid", "varCaseid" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "MailingCountry" : {
+      "title" : "MailingCountry",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "MailingPostalCode" : {
+      "title" : "MailingPostalCode",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "MailingState" : {
+      "title" : "MailingState",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "MailingStreet" : {
+      "title" : "MailingStreet",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "Mailingcity" : {
+      "title" : "Mailingcity",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "RegisteredEmailid" : {
+      "title" : "RegisteredEmailid",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "varCaseid" : {
+      "title" : "varCaseid",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType",
+  "lightning:textIndexed" : true
+}

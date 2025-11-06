@@ -1,0 +1,22 @@
+{
+  "required" : [ "varCaseId", "varRegisteredEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "varCaseId" : {
+      "title" : "varCaseId",
+      "description" : "Collect from Agent Create Case Records action",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "varRegisteredEmail" : {
+      "title" : "varRegisteredEmail",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType",
+  "lightning:textIndexed" : true
+}

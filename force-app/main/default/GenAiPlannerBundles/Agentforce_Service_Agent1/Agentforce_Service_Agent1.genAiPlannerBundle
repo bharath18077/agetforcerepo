@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <description>The agent should handle customer requests including updating email and address, automatically creating a case whenever a user reports an issue like  updating email ,address,password reset, appointment creation, event creation (and providing case summaries on request), sending password reset links via email for password-related topics, and managing appointment requests for wealth advisory by collecting mandatory details (time in IST, purpose, and mode), validating inputs, creating the event, and showing a confirmation summary.”</description>
+    <localActionLinks>
+        <genAiFunctionName>AnswerQuestionsWithKnowledge_16jgL000000coqE</genAiFunctionName>
+    </localActionLinks>
+    <localTopicLinks>
+        <genAiPluginName>Appointment_Request_16jgL000000coqE</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Bank_Statement_Assistance_16jgL000000coqE</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Card_Services_16jgL000000coqE</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Checkbook_Requests_16jgL000000coqE</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Customer_Request_Management_16jgL000000coqE</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Escalation_16jgL000000coqE</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Fraud_and_Duplicate_Charge_Claims_16jgL000000coqE</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>Checkbook_Requests_16jgL000000coqE</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handles user inquiries related to checkbook requests, including delivery timelines, eligibility, and charges.</description>
+        <developerName>Checkbook_Requests_16jgL000000coqE</developerName>
+        <genAiPluginInstructions>
+            <description>Donot go for case creation without getting email address.</description>
+            <developerName>instructions_0_1759228606332</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1759228606332</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Show the Checkbook knowledge article using &quot;Agent Knowledge Article&quot; action when user comes with Checkbook related queries</description>
+            <developerName>instruction_0_1758878164558</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0_1758878164558</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Only create a case if the user&apos;s issue remains unresolved after attempting to address it. Collect the registered email address,validate and directly call the Agent Create Case1 action. Avoid requesting additional case details from the user. Do not ask Description Priority from user.</description>
+            <developerName>instruction_1_1758878164558</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1_1758878164558</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>After creating case ,send case id to Agent Send checkbook request email action and Send a confirmation email with the case ID and estimated timeline.</description>
+            <developerName>instruction_2_1758878164558</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_2_1758878164558</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Agent_Create_Case1_179gL000000RzfL</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Get_Case_Summary_179gL000000RzfL</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Knowledge_Article_179gL000000RzfL</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Send_Checkbook_request_Email_179gL000000RzfL</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Agent_Send_Checkbook_request_Email_179gL000000RzfL</fullName>
+            <description>Send Email</description>
+            <developerName>Agent_Send_Checkbook_request_Email_179gL000000RzfL</developerName>
+            <invocationTarget>Agent_Send_Checkbook_request_Email</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Send_Checkbook_request_Email</localDeveloperName>
+            <masterLabel>Agent Send Checkbook request Email</masterLabel>
+            <source>Agent_Send_Checkbook_request_Email</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Knowledge_Article_179gL000000RzfL</fullName>
+            <description>Get details from knowledge article</description>
+            <developerName>Agent_Knowledge_Article_179gL000000RzfL</developerName>
+            <invocationTarget>Agent_Knowledge_Article</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Knowledge_Article</localDeveloperName>
+            <masterLabel>Agent Knowledge Article</masterLabel>
+            <source>Agent_Knowledge_Article</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Get_Case_Summary_179gL000000RzfL</fullName>
+            <description>When user ask the details of the case, get the case id or case number and display the coresponding case details to the user.</description>
+            <developerName>Agent_Get_Case_Summary_179gL000000RzfL</developerName>
+            <invocationTarget>Agent_Get_Case_Summary</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Get_Case_Summary</localDeveloperName>
+            <masterLabel>Agent Get Case Summary</masterLabel>
+            <source>Agent_Get_Case_Summary</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Create_Case1_179gL000000RzfL</fullName>
+            <description>This action helps the user create a new Case by first collecting their registered email ID, details of the issue like subject and detailed description, and then creats case. This action helps user is logging theei issue in salesforce. This action modifies uses contact, account and case object. It modifies case object by inserting a new record. This action can be triggered by &quot; Hi i want to registered a case&quot; or &quot;I have an issue&quot; etc also dont show caseid in coversation, but show in thinking panel. When requested show to user.</description>
+            <developerName>Agent_Create_Case1_179gL000000RzfL</developerName>
+            <invocationTarget>Agent_Create_Case</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Create_Case1</localDeveloperName>
+            <masterLabel>Agent Create Case1</masterLabel>
+            <source>Agent_Create_Case1</source>
+        </localActions>
+        <localDeveloperName>Checkbook_Requests</localDeveloperName>
+        <masterLabel>Checkbook Requests</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is only to assist users with checkbook-related queries, provide relevant knowledge articles, and create a case if the issue remains unresolved.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Bank_Statement_Assistance_16jgL000000coqE</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handles queries related to bank statements, including e-statements, historical statements, date-range requests, and format options.</description>
+        <developerName>Bank_Statement_Assistance_16jgL000000coqE</developerName>
+        <genAiPluginInstructions>
+            <description>If user comes with bank statement related queries, Before asking any details First display the details from knowledge article with title &quot;Bank Statement&quot; to user using &quot;Agent Knowledge Article&quot; action .</description>
+            <developerName>instructions_0_1759307312423</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1759307312423</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Only create a case if the user&apos;s issue remains unresolved after attempting to address it. Collect the registered email address and directly call the Agent Create Case1 action. Give case type as statement. Avoid requesting additional case details from the user. Do not ask Description Priority from user. After creating case ,send case id to Agent Send Bank Statement action. Also tell user that corresponding team will handle request and send statement</description>
+            <developerName>instructions_0_1760349720614</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1760349720614</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>When validating an email address, ensure it is in the correct format (e.g., user@example.com) and matches the registered email ID associated with the user&apos;s account. Prompt the user to re-enter their email if it is invalid.</description>
+            <developerName>instruction_0_1759138780717</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0_1759138780717</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Agent_Send_Bank_Statement_179gL000000RzfM</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Create_Case1_179gL000000RzfM</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Get_Case_Summary_179gL000000RzfM</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Knowledge_Article_179gL000000RzfM</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Agent_Send_Bank_Statement_179gL000000RzfM</fullName>
+            <description>Send Email</description>
+            <developerName>Agent_Send_Bank_Statement_179gL000000RzfM</developerName>
+            <invocationTarget>Agent_Send_Bank_Statement</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Send_Bank_Statement</localDeveloperName>
+            <masterLabel>Agent Send Bank Statement</masterLabel>
+            <source>Agent_Send_Bank_Statement</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Knowledge_Article_179gL000000RzfM</fullName>
+            <description>Get details from knowledge article</description>
+            <developerName>Agent_Knowledge_Article_179gL000000RzfM</developerName>
+            <invocationTarget>Agent_Knowledge_Article</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Knowledge_Article</localDeveloperName>
+            <masterLabel>Agent Knowledge Article</masterLabel>
+            <source>Agent_Knowledge_Article</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Get_Case_Summary_179gL000000RzfM</fullName>
+            <description>When user ask the details of the case, get the case id or case number and display the coresponding case details to the user.</description>
+            <developerName>Agent_Get_Case_Summary_179gL000000RzfM</developerName>
+            <invocationTarget>Agent_Get_Case_Summary</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Get_Case_Summary</localDeveloperName>
+            <masterLabel>Agent Get Case Summary</masterLabel>
+            <source>Agent_Get_Case_Summary</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Create_Case1_179gL000000RzfM</fullName>
+            <description>This action helps the user create a new Case by first collecting their registered email ID, details of the issue like subject and detailed description, and then creats case. This action helps user is logging theei issue in salesforce. This action modifies uses contact, account and case object. It modifies case object by inserting a new record. This action can be triggered by &quot; Hi i want to registered a case&quot; or &quot;I have an issue&quot; etc also dont show caseid in coversation, but show in thinking panel. When requested show to user.</description>
+            <developerName>Agent_Create_Case1_179gL000000RzfM</developerName>
+            <invocationTarget>Agent_Create_Case</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Create_Case1</localDeveloperName>
+            <masterLabel>Agent Create Case1</masterLabel>
+            <source>Agent_Create_Case1</source>
+        </localActions>
+        <localDeveloperName>Bank_Statement_Assistance</localDeveloperName>
+        <masterLabel>Bank Statement Assistance</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is only to assist with bank statement-related queries such as providing e-statements, retrieving historical statements, fulfilling date-range requests, and explaining available formats. Do not address unrelated banking topics.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Customer_Request_Management_16jgL000000coqE</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handles customer requests related to updating contact details, password resets, appointment and event creation, and case management.</description>
+        <developerName>Customer_Request_Management_16jgL000000coqE</developerName>
+        <genAiPluginInstructions>
+            <description>When user asks to update email, address, or reset password, first search and display the relevant Knowledge Article (Update Email, Update Address, Reset Password).
+Use title &quot;Update Your Contact Email Address&quot; for displaying knowledge article for email update related queries.
+Use title &quot;Update Your Contact Address&quot; for displaying knowledge article for updating address related queries.
+Use title &quot;Resetting Your Password&quot; for displaying knowledge article for password reset related queries.
+Use title &quot;Resetting Your Password&quot; for displaying knowledge article for password reset related queries.
+Ask: “Does this article solve your issue?”
+
+If yes → end the interaction politely.</description>
+            <developerName>instructions_0_1758459252822</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1758459252822</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If Issue Not Solved → Proceed with Actions
+Collect the user’s registered email ID.
+
+Use Agent Create Case flow to create a new case for tracking the request.
+
+Perform the corresponding action based on user’s request:
+
+Update contact email address → Run Update Email for Contact flow.
+
+Update contact mailing address → Run Update Contact Address flow.
+
+Reset password → Run Agent Reset Password flow.</description>
+            <developerName>instructions_0_1760434841123</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1760434841123</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Create events for appointments and provide a confirmation summary to the customer.</description>
+            <developerName>instruction_0_1758105566736</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0_1758105566736</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If the user asks for case summary, use Agent Get Case Summary flow to display the details of the case.</description>
+            <developerName>instruction_1_1758105566736</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1_1758105566736</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Agent_Create_Case1_179gL000000RzfJ</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Get_Case_Summary_179gL000000RzfJ</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Update_Email_for_Contact2_179gL000000RzfJ</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Update_contact_Address33_179gL000000RzfJ</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Reset_Password17_1_179gL000000RzfJ</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Knowledge_Article_179gL000000RzfJ</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Agent_Get_Case_Summary_179gL000000RzfJ</fullName>
+            <description>When user ask the details of the case, get the case id or case number and display the coresponding case details to the user.</description>
+            <developerName>Agent_Get_Case_Summary_179gL000000RzfJ</developerName>
+            <invocationTarget>Agent_Get_Case_Summary</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Get_Case_Summary</localDeveloperName>
+            <masterLabel>Agent Get Case Summary</masterLabel>
+            <source>Agent_Get_Case_Summary</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Create_Case1_179gL000000RzfJ</fullName>
+            <description>This action helps the user create a new Case by first collecting their registered email ID, details of the issue like subject and detailed description, and then creats case. This action helps user is logging theei issue in salesforce. This action modifies uses contact, account and case object. It modifies case object by inserting a new record. This action can be triggered by &quot; Hi i want to registered a case&quot; or &quot;I have an issue&quot; etc also dont show caseid in coversation, but show in thinking panel. When requested show to user.</description>
+            <developerName>Agent_Create_Case1_179gL000000RzfJ</developerName>
+            <invocationTarget>Agent_Create_Case</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Create_Case1</localDeveloperName>
+            <masterLabel>Agent Create Case1</masterLabel>
+            <source>Agent_Create_Case1</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Knowledge_Article_179gL000000RzfJ</fullName>
+            <description>Get details from knowledge article</description>
+            <developerName>Agent_Knowledge_Article_179gL000000RzfJ</developerName>
+            <invocationTarget>Agent_Knowledge_Article</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Knowledge_Article</localDeveloperName>
+            <masterLabel>Agent Knowledge Article</masterLabel>
+            <source>Agent_Knowledge_Article</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Reset_Password17_1_179gL000000RzfJ</fullName>
+            <description>Send a password reset link to the email address associated with the given Contact record.</description>
+            <developerName>Agent_Reset_Password17_1_179gL000000RzfJ</developerName>
+            <invocationTarget>Agent_Reset_Password</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Reset_Password17_1</localDeveloperName>
+            <masterLabel>Agent Reset Password</masterLabel>
+            <source>Agent_Reset_Password17_1</source>
+        </localActions>
+        <localActions>
+            <fullName>Update_contact_Address33_179gL000000RzfJ</fullName>
+            <description>Update contact address</description>
+            <developerName>Update_contact_Address33_179gL000000RzfJ</developerName>
+            <invocationTarget>Update_contact_Address</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Update_contact_Address33</localDeveloperName>
+            <masterLabel>Update contact Address</masterLabel>
+            <source>Update_contact_Address33</source>
+        </localActions>
+        <localActions>
+            <fullName>Update_Email_for_Contact2_179gL000000RzfJ</fullName>
+            <description>When registered email address is provided, and emailtoupdate is provided, update the email address. After email is successfully updated, update case status based on case id</description>
+            <developerName>Update_Email_for_Contact2_179gL000000RzfJ</developerName>
+            <invocationTarget>Update_Email_for_Contact</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Update_Email_for_Contact2</localDeveloperName>
+            <masterLabel>Update Email for Contact2</masterLabel>
+            <source>Update_Email_for_Contact2</source>
+        </localActions>
+        <localDeveloperName>Customer_Request_Management</localDeveloperName>
+        <masterLabel>Update Record</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is only to assist customers in updating email and address details, sending password reset links via email, creating cases for reported issues,.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Appointment_Request_16jgL000000coqE</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handles wealth advisory appointment scheduling when a user mentions booking with an advisor.</description>
+        <developerName>Appointment_Request_16jgL000000coqE</developerName>
+        <genAiPluginInstructions>
+            <description>If a user asks about appointment-related queries, first display relevant details from the knowledge article titled &apos;Appointment Request&apos; using the &apos;Agent Knowledge Article&apos; action.</description>
+            <developerName>instructions_0_1758203152381</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1758203152381</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Only create a case if the user&apos;s issue remains unresolved after attempting to address it.  proceed to collect mandatory details, including the registered email address, preferred time, purpose of the appointment, and the mode of the meeting (e.g., in-person or virtual).Validate the correctness of the provided details before proceeding to create the appointment.
+Use the Create Event action to schedule the appointment and ensure all collected details are included.</description>
+            <developerName>instructions_0_1760434945474</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1760434945474</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Show a confirmation summary to the user with the event details, including the scheduled time, purpose, and mode.</description>
+            <developerName>instructions_0_1760599600070</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1760599600070</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Please validate startdate is not less than now. Please ask for new date if user enters date less than today</description>
+            <developerName>instruction_0_1758198209234</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0_1758198209234</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>When a user mentions booking an appointment with an advisor, confirm their intent to proceed with scheduling.</description>
+            <developerName>instruction_1_1758198209234</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1_1758198209234</masterLabel>
+            <sortOrder>4</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If the chat is being escalated, ask the user for their email.
+If the email is provided, create a case with the correct case type based on the issue (e.g., Address Update, Billing, Technical).
+Then, route the chat to a human agent who has the matching skill for that case type.
+Finally, inform the user that their case is created and they are being connected to the right specialist.</description>
+            <developerName>instruction_2_1758198209234</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_2_1758198209234</masterLabel>
+            <sortOrder>5</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Agent_Appointment_Request5_179gL000000RzfK</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Knowledge_Article_179gL000000RzfK</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Agent_Appointment_Request5_179gL000000RzfK</fullName>
+            <description>&quot;⦁	Create a topic Appointment Request  to handle wealth advisory appointment scheduling.
+⦁	Trigger when user mentions booking with advisor; 
+⦁	collect mandatory details (time in IST, purpose, mode) and validate correctness.
+⦁	Call Create Event action and show confirmation summary with event details.&quot;</description>
+            <developerName>Agent_Appointment_Request5_179gL000000RzfK</developerName>
+            <invocationTarget>Agent_Appointment_Request</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Appointment_Request5</localDeveloperName>
+            <masterLabel>Agent Appointment Request</masterLabel>
+            <source>Agent_Appointment_Request5</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Knowledge_Article_179gL000000RzfK</fullName>
+            <description>Get details from knowledge article</description>
+            <developerName>Agent_Knowledge_Article_179gL000000RzfK</developerName>
+            <invocationTarget>Agent_Knowledge_Article</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <masterLabel>Agent Knowledge Article</masterLabel>
+            <source>Agent_Knowledge_Article</source>
+        </localActions>
+        <localDeveloperName>Appointment_Request</localDeveloperName>
+        <masterLabel>Appointment Request</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is only to assist users in scheduling wealth advisory appointments by collecting mandatory details such as time in IST, purpose, and mode, validating their correctness, and creating an event using the Create Event action.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Escalation_16jgL000000coqE</fullName>
+        <canEscalate>true</canEscalate>
+        <description>Handles requests from users who want to transfer or escalate their conversation to a live human agent.</description>
+        <developerName>Escalation_16jgL000000coqE</developerName>
+        <genAiPluginInstructions>
+            <description>If a user explicitly asks to transfer to a live agent, escalate the conversation.</description>
+            <developerName>escalateonrequest</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>escalate-on-request</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If escalation to a live agent fails for any reason, acknowledge the issue and ask the user whether they would like to log a support case instead.</description>
+            <developerName>promptonescalationfailure</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>prompt-on-escalation-failure</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If the chat is being escalated, ask the user for their email.
+If the email is provided, create a case with the correct case type based on the issue (e.g., Address Update, Billing, Technical).
+Then, route the chat to a human agent who has the matching skill for that case type.
+Finally, inform the user that their case is created and they are being connected to the right specialist.</description>
+            <developerName>instructions_0_1760602616594</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1760602616594</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>Escalation</localDeveloperName>
+        <masterLabel>Escalation</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is to transfer the conversation to a live agent if a user explicitly asks for human assistance or has a complex issue that requires human intervention. If escalation fails, ask the user whether they would like to log a support case so the issue is recorded for follow-up.</scope>
+        <source>SvcCopilotTmpl__Escalation</source>
+    </localTopics>
+    <localTopics>
+        <fullName>Fraud_and_Duplicate_Charge_Claims_16jgL000000coqE</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handles user inquiries related to fraud or duplicate-charge claims, ensuring proper case creation and communication of investigation timelines.</description>
+        <developerName>Fraud_and_Duplicate_Charge_Claims_16jgL000000coqE</developerName>
+        <genAiPluginInstructions>
+            <description>1st show knowledge article from &quot;Agent Knowledge Article&quot; action when user comes with fraud related queries. If users issue is not solved, Ask the user for their registered email address. Verify and validate the email address. Create a case immediately for fraud or duplicate-charge claims with a priority set to High, case type to Fraud. Use &apos;Fraud/***&apos; as the case subject, replacing *** with relevant details provided by the user. Collect a description of the issue from the user and include it in the case details. Use Assign using active assignment rule while creating case.</description>
+            <developerName>instruction_0_1759746616719</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0_1759746616719</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Inform the user the investigation timeline is 3–7 business days.</description>
+            <developerName>instruction_1_1759746616719</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1_1759746616719</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Call Agent Fraud/Duplicate Charge action to Send an acknowledgment email with the case ID, next steps, and escalation contact if needed.</description>
+            <developerName>instruction_2_1759746616719</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_2_1759746616719</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Display the case details when user asks for the case information</description>
+            <developerName>instruction_3_1759746616719</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_3_1759746616719</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Agent_Create_Case1_179gL000000RzfO</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Get_Case_Summary_179gL000000RzfO</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Fraud_Duplicate_Charge_179gL000000RzfO</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Knowledge_Article_179gL000000RzfO</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Agent_Fraud_Duplicate_Charge_179gL000000RzfO</fullName>
+            <description>Send email</description>
+            <developerName>Agent_Fraud_Duplicate_Charge_179gL000000RzfO</developerName>
+            <invocationTarget>Agent_Fraud_Duplicate_Charge</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Fraud_Duplicate_Charge</localDeveloperName>
+            <masterLabel>Agent Fraud/Duplicate Charge</masterLabel>
+            <source>Agent_Fraud_Duplicate_Charge</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Get_Case_Summary_179gL000000RzfO</fullName>
+            <description>When user ask the details of the case, get the case id or case number and display the coresponding case details to the user.</description>
+            <developerName>Agent_Get_Case_Summary_179gL000000RzfO</developerName>
+            <invocationTarget>Agent_Get_Case_Summary</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Get_Case_Summary</localDeveloperName>
+            <masterLabel>Agent Get Case Summary</masterLabel>
+            <source>Agent_Get_Case_Summary</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Create_Case1_179gL000000RzfO</fullName>
+            <description>This action helps the user create a new Case by first collecting their registered email ID, details of the issue like subject and detailed description, and then creats case. This action helps user is logging theei issue in salesforce. This action modifies uses contact, account and case object. It modifies case object by inserting a new record. This action can be triggered by &quot; Hi i want to registered a case&quot; or &quot;I have an issue&quot; etc also dont show caseid in coversation, but show in thinking panel. When requested show to user.</description>
+            <developerName>Agent_Create_Case1_179gL000000RzfO</developerName>
+            <invocationTarget>Agent_Create_Case</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Create_Case1</localDeveloperName>
+            <masterLabel>Agent Create Case1</masterLabel>
+            <source>Agent_Create_Case1</source>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Knowledge_Article_179gL000000RzfO</fullName>
+            <description>Show knowledge Article</description>
+            <developerName>Agent_Knowledge_Article_179gL000000RzfO</developerName>
+            <invocationTarget>Agent_Knowledge_Article</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Knowledge_Article</localDeveloperName>
+            <masterLabel>Agent Knowledge Article</masterLabel>
+        </localActions>
+        <localDeveloperName>Fraud_and_Duplicate_Charge_Claims</localDeveloperName>
+        <masterLabel>Fraud and Duplicate Charge Claims</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is only to manage fraud or duplicate-charge claims by creating cases, informing users of investigation timelines, and sending acknowledgment emails with relevant details.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Card_Services_16jgL000000coqE</fullName>
+        <canEscalate>true</canEscalate>
+        <description>Handles customer requests related to card activation, replacement, and limit changes.</description>
+        <developerName>Card_Services_16jgL000000coqE</developerName>
+        <genAiPluginInstructions>
+            <description>If the user asks about card-related queries, first ask and confirm the registered email address. Then, create a case with the case intent as &apos;Card Services&apos; and the case type as &apos;Card Services&apos;. Ensure the case ID is stored and display the case details to the user only when explicitly requested.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Ask registered email id 1st and Display details from the knowledge article titled &apos;Card Services&apos; using the &apos;Agent Knowledge Article&apos; action.</description>
+            <developerName>instruction_2</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 2</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Check with the user whether the knowledge article was useful. If not, guide the user further by showing a menu with options: Card Activation, Card Replacement, and Card Limit Change. Display like a menu box</description>
+            <developerName>instruction_3</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 3</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>For Card Activation: Ask for the card type (Debit/Credit/Business) and the last 4 digits of the card number. Send these details to the Agent Card Activation to activate the card.</description>
+            <developerName>instruction_4</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 4</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>For Card Replacement: Ask for the card type, the last 4 digits of the card number, and the replacement reason (Lost/Damaged/Stolen). Send these details to the Agent Card Replacement.</description>
+            <developerName>instruction_5</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 5</masterLabel>
+            <sortOrder>4</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>For Card Limit Change: Ask for the card type, the last 4 digits of the card number, and the limit. Send these details to the Agent Card Limit Change.</description>
+            <developerName>instruction_6</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 6</masterLabel>
+            <sortOrder>5</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If the user is not satisfied, check with the user and escalate to the corresponding agent.</description>
+            <developerName>instruction_7</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 7</masterLabel>
+            <sortOrder>6</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>When validating an email address, ensure it is in the correct format (e.g., user@example.com) and matches the registered email ID associated with the user&apos;s account. Prompt the user to re-enter their email if it is invalid.</description>
+            <developerName>instructions_0_1761292405438</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1761292405438</masterLabel>
+            <sortOrder>7</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Agent_Create_Case1_179gL000000V7ej</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Knowledge_Article_179gL000000V7ej</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Agent_Card_Activation_179gL000000V7ej</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Agent_Card_Activation_179gL000000V7ej</fullName>
+            <description>Activate card</description>
+            <developerName>Agent_Card_Activation_179gL000000V7ej</developerName>
+            <invocationTarget>Agent_Card_Service</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Card_Activation</localDeveloperName>
+            <masterLabel>Agent Card Activation</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Knowledge_Article_179gL000000V7ej</fullName>
+            <description>Knowledge Article</description>
+            <developerName>Agent_Knowledge_Article_179gL000000V7ej</developerName>
+            <invocationTarget>Agent_Knowledge_Article</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Agent_Knowledge_Article</localDeveloperName>
+            <masterLabel>Agent Knowledge Article</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Agent_Create_Case1_179gL000000V7ej</fullName>
+            <description>This action helps the user create a new Case by first collecting their registered email ID, details of the issue like subject and detailed description, and then creats case. This action helps user is logging theei issue in salesforce. This action modifies uses contact, account and case object. It modifies case object by inserting a new record. This action can be triggered by &quot; Hi i want to registered a case&quot; or &quot;I have an issue&quot; etc also dont show caseid in coversation, but show in thinking panel. When requested show to user.</description>
+            <developerName>Agent_Create_Case1_179gL000000V7ej</developerName>
+            <invocationTarget>Agent_Create_Case</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <masterLabel>Agent Create Case1</masterLabel>
+            <source>Agent_Create_Case1</source>
+        </localActions>
+        <localDeveloperName>Card_Services</localDeveloperName>
+        <masterLabel>Card Services</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is only to assist users with card activation, card replacement, and card limit change requests. For each scenario, gather the required details, provide relevant information from the knowledge article titled &apos;Card Services,&apos; and guide users through the appropriate steps. Escalate to the corresponding agent if the user is not satisfied.</scope>
+    </localTopics>
+    <masterLabel>Agentforce Service Agent1</masterLabel>
+    <plannerActions>
+        <fullName>AnswerQuestionsWithKnowledge_16jgL000000coqE</fullName>
+        <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+        <developerName>AnswerQuestionsWithKnowledge_16jgL000000coqE</developerName>
+        <invocationTarget>streamKnowledgeSearch</invocationTarget>
+        <invocationTargetType>standardInvocableAction</invocationTargetType>
+        <isConfirmationRequired>false</isConfirmationRequired>
+        <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+        <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+        <masterLabel>Answer Questions with Knowledge</masterLabel>
+        <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+        <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+    </plannerActions>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__Messaging</surface>
+        <surfaceType>Messaging</surfaceType>
+    </plannerSurfaces>
+    <plannerType>AiCopilot__ReAct</plannerType>
+    <ruleExpressions>
+        <conditions>
+            <leftOperand>isVerified</leftOperand>
+            <leftOperandType>Variable</leftOperandType>
+            <operator>equal</operator>
+            <rightOperandValue>true</rightOperandValue>
+        </conditions>
+        <expression>Verified_User</expression>
+        <expressionLabel>Verified User</expressionLabel>
+        <expressionName>Verified_User</expressionName>
+        <expressionType>sel</expressionType>
+    </ruleExpressions>
+</GenAiPlannerBundle>

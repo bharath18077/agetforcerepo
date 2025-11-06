@@ -1,0 +1,29 @@
+{
+  "required" : [ "EmailToUpdate", "RegisteredEmail", "varCaseid" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "EmailToUpdate" : {
+      "title" : "EmailToUpdate",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "RegisteredEmail" : {
+      "title" : "RegisteredEmail",
+      "description" : "Collect from user",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "varCaseid" : {
+      "title" : "varCaseid",
+      "description" : "Collect from Case creation flow",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType",
+  "lightning:textIndexed" : true
+}

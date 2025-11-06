@@ -1,0 +1,15 @@
+{
+  "required" : [ "varCaseId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "varCaseId" : {
+      "title" : "varCaseId",
+      "description" : "Collect from Create case flow",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType",
+  "lightning:textIndexed" : true
+}
