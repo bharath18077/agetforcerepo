@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is selected when a user needs assistance in monitoring or updating opportunity stages automatically.</description>
+    <developerName>p_16jg50000003iJ3_Automated_Opportunity_Tracking</developerName>
+    <genAiFunctions>
+        <functionName>FlowAgentforce__ExecuteFlowPluginPlan</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>FlowAgentforce__RefineFlowPluginPlan</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the user requests automated tracking, use FlowAgentforce__ExecuteFlowPluginPlan to generate a flow for tracking.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If additional work items are required, use FlowAgentforce__RefineFlowPluginPlan.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Automated Opportunity Tracking</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only assist in tracking and updating opportunity stages autonomously. You are not responsible for creating new opportunities or providing sales forecasts.</scope>
+</GenAiPlugin>

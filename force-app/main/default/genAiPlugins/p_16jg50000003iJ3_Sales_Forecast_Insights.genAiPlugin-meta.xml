@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is selected when a user requests predictive analytics or insights into opportunity trends for sales forecasting.</description>
+    <developerName>p_16jg50000003iJ3_Sales_Forecast_Insights</developerName>
+    <genAiFunctions>
+        <functionName>DataCloudAgent__CdpRtdgStatus</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>DataCloudAgent__CdpRtGetIdMap</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the user requests sales trend analytics, use DataCloudAgent__CdpRtdgStatus.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the user requests ID mappings for data graphs, use DataCloudAgent__CdpRtGetIdMap.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Sales Forecast Insights</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only provide predictive analytics and insights related to opportunity trends. You are not responsible for creating or updating opportunity records or customer data.</scope>
+</GenAiPlugin>

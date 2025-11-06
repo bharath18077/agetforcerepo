@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is selected when a user requests assistance with creating or updating opportunity records for external customers.</description>
+    <developerName>p_16jg50000003iJ3_Opportunity_Data_Management</developerName>
+    <genAiFunctions>
+        <functionName>sales_sdr_agent__CreateSalesLeadRecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>schema_ai__IdentifyFieldByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the user wants to create a new opportunity record, use sales_sdr_agent__CreateSalesLeadRecord.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the user wants to update an existing opportunity record, use schema_ai__IdentifyFieldByName to locate the necessary fields.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Opportunity Data Management</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only assist with creating and updating opportunity records, ensuring accurate and complete information is entered. You are not responsible for validating customer data or generating sales insights.</scope>
+</GenAiPlugin>

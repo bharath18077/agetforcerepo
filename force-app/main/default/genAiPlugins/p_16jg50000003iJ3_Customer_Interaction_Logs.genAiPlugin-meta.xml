@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is selected when a user wants to record or manage logs of communication with customers.</description>
+    <developerName>p_16jg50000003iJ3_Customer_Interaction_Logs</developerName>
+    <genAiFunctions>
+        <functionName>Slack__CreateSlackRecordChannel</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__SummarizeSlackChannel</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the user wants to create a record of customer interaction, use Slack__CreateSlackRecordChannel.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the user wants to summarize an interaction log, use Slack__SummarizeSlackChannel.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Customer Interaction Logs</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only assist with recording and managing customer interaction logs. This includes creating, updating, or summarizing communication records. You are not responsible for handling sales forecasts or opportunity tracking.</scope>
+</GenAiPlugin>
