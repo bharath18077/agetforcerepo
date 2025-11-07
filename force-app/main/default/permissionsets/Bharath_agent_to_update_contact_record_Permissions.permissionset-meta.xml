@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows custom permissions for Agentforce Agent : Bharath_agent_to_update_contact_record&apos;s agent user : bharath_agent_to_update_contact_record@00dgl00000aw5y5.ext.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bharath_agent_to_update_contact_record Permissions</label>
+    <license>Einstein Agent</license>
+</PermissionSet>

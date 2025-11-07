@@ -1,0 +1,14 @@
+{
+  "required" : [ "accName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "accName" : {
+      "title" : "accName",
+      "description" : "mandotary input",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

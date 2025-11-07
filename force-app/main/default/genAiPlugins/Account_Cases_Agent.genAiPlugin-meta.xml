@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>Retrieve cases associated with a provided account name or inform the user if the account name does not exist.</description>
+    <developerName>Account_Cases_Agent</developerName>
+    <genAiPluginInstructions>
+        <description>Request the account name from the user if not already provided.</description>
+        <developerName>instruction_0_1762440909970</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0_1762440909970</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If cases are found, provide the details of the cases to the user.</description>
+        <developerName>instruction_1_1762440909970</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1_1762440909970</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If no account matches the provided name, inform the user that the account name does not exist.</description>
+        <developerName>instruction_2_1762440909970</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_2_1762440909970</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Ask clarifying questions if the provided account name appears incomplete or ambiguous.</description>
+        <developerName>instruction_3_1762440909970</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_3_1762440909970</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Account Cases Agent</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>My job is to retrieve cases related to the account name provided by the user. If the account name is not available, I will inform the user that the account name does not exist.</scope>
+</GenAiPlugin>
